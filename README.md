@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# Jogo da Memória - Qualificar ES (Logística ABNT)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um jogo da memória interativo focado no ensino e fixação dos símbolos logísticos oficiais de manuseio e transporte, baseado nas diretrizes da ISO 780 e nas normativas NBR 7500 da ABNT.
+Desenvolvido a pedido de um projeto escolar / instrucional associado ao **Programa Qualificar ES**.
 
-Currently, two official plugins are available:
+## 📦 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Símbolos ABNT Autênticos:** Ícones desenhados em vetor (SVG nativo) que reproduzem os decalques oficiais presentes em caixas e remessas (Ex: Frágil, Manter Seco, Não Rolar, etc).
+- **Design de Alta Qualidade:** Interface moderna e responsiva utilizando as cores oficiais do Estado do Espírito Santo (Azul, Laranja e Verde).
+- **Grade 4x4:** 16 cartas gigantes adaptadas para a melhor nitidez e leitura, tanto da imagem quanto do texto explicativo.
+- **Animações 3D:** Efeitos dinâmicos (Flip) em CSS puro, gerando feedbacks visuais quando o usuário escolhe um par de cartas.
 
-## React Compiler
+## 🛠️ Tecnologias Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [React](https://reactjs.org/) (Biblioteca JavaScript para construir interfaces de usuário)
+- [TypeScript](https://www.typescriptlang.org/) (Tipagem estática para JavaScript)
+- [Vite](https://vitejs.dev/) (Build tool e servidor de desenvolvimento ultra-rápido)
+- [Node.js](https://nodejs.org/) (Ambiente de execução)
+- CSS Vanilla (Para as animações e o Grid Layout)
 
-## Expanding the ESLint configuration
+## 🚀 Como instalar e rodar o projeto localmente
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Siga o passo a passo abaixo para rodar o jogo no seu computador:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Pré-requisitos
+- É necessário ter o **[Node.js](https://nodejs.org/)** instalado.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Passo 1: Clonar e Acessar a pasta
+Baixe o projeto do GitHub e entre no diretório criado:
+```bash
+git clone https://github.com/jbjl0a/QualificarEsJogoMemoria.git
+cd QualificarEsJogoMemoria
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Passo 2: Instalar as Dependências
+Execute o comando abaixo para instalar as bibliotecas do React e ferramentas necessárias:
+```bash
+npm install
 ```
+
+### Passo 3: Iniciar o Jogo
+Faça o build e execute ativando o modo de desenvolvedor (Dev Server):
+```bash
+npm run dev
+```
+
+O terminal mostrará algo parecido com: `➜  Local:   http://localhost:5173/`. 
+Basta segurar a tecla `CTRL` e clicar no link ou copiar a URL para o seu navegador web favorito (Chrome, Edge, Firefox).
+
+## 🎮 Como Jogar
+O objetivo do jogo é encontrar os **8 pares** equivalentes (16 cartas).
+Cada par correto é formando juntando a imagem (símbolo) que descreve uma regra logística à sua respectiva descrição escrita correspondente. Tente completar com a menor quantidade de `Movimentos` possível!
